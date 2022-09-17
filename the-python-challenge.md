@@ -1,3 +1,9 @@
+# The Python Challenge
+
+Write-up til oppgavene i The Python Challenge (http://www.pythonchallenge.com/).
+
+
+
 # [0]
 
 Her ser vi et bilde hvor det står 2^38, altså 2 opphøyd i 38.
@@ -75,3 +81,19 @@ http://www.pythonchallenge.com/pc/def/ocr.html
 
 # [2]
 
+Her hintes det sterkt til at vi må kikke i kildekoden.  
+Vi inspiserer og finner en stor vegg med tekst.  
+
+Et lite utdrag:
+```
+%%$@_$^__#)^)&!_+]!*@&^}@[@%]()%+$&[(_@%+%$*^@$^!+]!&_#)_*}{}}!}_]$[%}@[{_@#_^{*
+@##&{#&{&)*%(]{{([*}@[@&]+!!*{)!}{%+{))])[!^})+)$]#{*+^((@^@}$[**$&^{$!@#$%)!@(&
++^!{%_$&@^!}$_${)$_#)!({@!)(^}!*^&!$%_&&}&_#&@{)]{+)%*{&*%*&@%$+]!*__(#!*){%&@++
+!_)^$&&%#+)}!@!)&^}**#!_$([$!$}#*^}$+&#[{*{}{((#$]{[$[$$()_#}!@}^@_&%^*!){*^^_$^
+]@}#%[%!^[^_})+@&}{@*!(@$%$^)}[_!}(*}#}#___}!](@_{{(*#%!%%+*)^+#%}$+_]#}%!**#!^_
+)@)$%%^{_%!@(&{!}$_$[)*!^&{}*#{!)@})!*{^&[&$#@)*@#@_@^_#*!@_#})+[^&!@*}^){%%{&#@
+```
+
+Copypaster teksten til en fil som får navnet `2.txt`.  
+
+Videre i kildekoden står det "find rare characters in the mess below".  

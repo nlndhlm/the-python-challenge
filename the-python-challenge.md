@@ -47,7 +47,7 @@ Hvilket gir oss:
 
 ### Løsning 2
 
-Vi tar med oss tipset fra løsningen, og prøver å finne en løsning som bruker maketrans()-funksjonen:
+Vi tar med oss tipset, og prøver å finne en løsning som bruker `maketrans()`-funksjonen:
 
 ```
 # her bruker vi maketrans()-funksjonen som foreslått i løsningen:
@@ -60,9 +60,18 @@ intab = "abcdefghijklmnopqrstuvwxyz"
 
 outtab = "cdefghijklmnopqrstuvwxyzab"
 
-trantab = encrypted_message.maketrans(intab, outtab) # lager en tabell som forteller translate hvilke bokstaver som skal matche
+trantab = encrypted_message.maketrans(intab, outtab) # lager en oversettelsestabell
 
 print(encrypted_message.translate(trantab))
 
 ```
+
+Når vi kjører sciptet på URLen får vi:
+
+`jvvr://yyy.ravjqpejcnngpig.eqo/re/fgh/ocr.jvon`
+
+Etter litt prøving og feiling viser det seg at løsningsordet er `ocr`, og dermed blir neste URL:  
+http://www.pythonchallenge.com/pc/def/ocr.html
+
+# [2]
 

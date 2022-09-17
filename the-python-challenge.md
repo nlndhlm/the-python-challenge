@@ -49,3 +49,20 @@ Hvilket gir oss:
 
 Vi tar med oss tipset fra løsningen, og prøver å finne en løsning som bruker maketrans()-funksjonen:
 
+```
+# her bruker vi maketrans()-funksjonen som foreslått i løsningen:
+
+encrypted_message = """g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. 
+bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle.
+sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj"""
+
+intab = "abcdefghijklmnopqrstuvwxyz"
+
+outtab = "cdefghijklmnopqrstuvwxyzab"
+
+trantab = encrypted_message.maketrans(intab, outtab) # lager en tabell som forteller translate hvilke bokstaver som skal matche
+
+print(encrypted_message.translate(trantab))
+
+```
+

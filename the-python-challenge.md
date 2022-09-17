@@ -1,0 +1,13 @@
+[0]
+
+Her ser vi et bilde hvor det står 2^38, altså 2 opphøyd i 38.
+
+`
+print(2**38)
+`
+
+Dette gir oss:  
+
+274877906944  
+
+Dermed endrer vi nettadressen til http://www.pythonchallenge.com/pc/def/274877906944.html for å komme til neste oppgave.

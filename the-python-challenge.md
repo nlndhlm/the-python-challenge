@@ -12,12 +12,13 @@ Dette gir oss:
 
 Dermed endrer vi nettadressen til http://www.pythonchallenge.com/pc/def/274877906944.html for å komme til neste oppgave.
 
-# 1
+# [1]
 
 Ut ifra bildet ser det ut til at vi skal bruke Cæsar-chiffer til å dekryptere teksten.  
 Hver bokstav skal forskyves to plasser fremover i alfabetet.  
 
-Første løsning, ikke så veldig elegant, men gjør jobben:
+### Løsning 1
+Ikke så veldig elegant, men gjør jobben:
 
 ```
 
@@ -43,4 +44,8 @@ print(''.join(decrypted_message))
 Hvilket gir oss:
 
 `i hope you didnt translate it by hand. thats what computers are for. doing it in by hand is inefficient and that's why this text is so long. using string.maketrans() is recommended. now apply on the url`
+
+### Løsning 2
+
+Vi tar med oss tipset fra løsningen, og prøver å finne en løsning som bruker maketrans()-funksjonen:
 

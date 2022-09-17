@@ -116,7 +116,8 @@ Første idé er å fjerne alt som ikke er alfanumerisk, altså bokstaver eller t
 Har en anelse om at regex kanskje er rett verktøy for jobben.  
 
 Googler "remove non alpha numeric characthers python" og får opp flere forslag.  
-Ender opp med et forslag herifra: https://stackoverflow.com/questions/1276764/stripping-everything-but-alphanumeric-chars-from-a-string-in-python
+Ender opp med et forslag herifra:  
+https://stackoverflow.com/questions/1276764/stripping-everything-but-alphanumeric-chars-from-a-string-in-python
 
 Dermed blir koden slik:
 ```
@@ -136,4 +137,21 @@ print(new_txt)
 Dette gir oss løsningsordet:  
 `equality`
 
+Neste level:  
+www.pythonchallenge.com/pc/def/equality.html
+
+# [3]
+
+Hint: One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.  
+
+Nok en gang kikker vi i kildekoden og finner en stor vegg med tekst.  
+
+Utdrag:
+```
+ENihrpCLhujoBqPRDPvfzcwadMMMbkmkzCCzoTPfbRlzBqMblmxTxNniNoCufprWXxgHZpldkoLCrHJq
+vYuyJFCZtqXLhWiYzOXeglkzhVJIWmeUySGuFVmLTCyMshQtvZpPwuIbOHNoBauwvuJYCmqznOBgByPw
+TDQheAbsaMLjTmAOKmNsLziVMenFxQdATQIjItwtyCHyeMwQTNxbbLXWZnGmDqHhXnLHfEyvzxMhSXzd
+BEBaxeaPgQPttvqRvxHPEOUtIsttPDeeuGFgmDkKQcEYjuSuiGROGfYpzkQgvcCDBKrcYwHFlvPzDMEk
+MyuPxvGtgSvWgrybKOnbEGhqHUXHhnyjFwSfTfaiWtAOMBZEScsOSumwPssjCPlLbLsPIGffDLpZzMKz
+```
 

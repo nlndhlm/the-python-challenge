@@ -23,16 +23,15 @@ Første løsning, ikke så veldig elegant, men gjør jobben:
 
 char = "abcdefghijklmnopqrstuvwxyzab"
 
-encrypted_message = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj"
+encrypted_message = """g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. 
+bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle.
+sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj"""
 
 decrypted_message = []
 
 for letter in encrypted_message:
 
     if letter in char:
-        
-        print(char.index(letter)) # gir oss index til hver bokstav
-
         decrypted_message.append(char[char.index(letter)+2])
     else:
         decrypted_message.append(letter)

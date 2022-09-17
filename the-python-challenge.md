@@ -97,3 +97,43 @@ Et lite utdrag:
 Copypaster teksten til en fil som får navnet `2.txt`.  
 
 Videre i kildekoden står det "find rare characters in the mess below".  
+
+Vi åpner fila vår i Python:  
+
+```
+f = open("2.txt", "r")
+
+txt = f.read()
+```
+
+Hvor stor er egentlig teksten?
+
+`len(txt)` gir oss `98773`
+
+Altså ingen vits i å lete manuelt...
+
+Første idé er å fjerne alt som ikke er alfanumerisk, altså bokstaver eller tall.  
+Har en anelse om at regex kanskje er rett verktøy for jobben.  
+
+Googler "remove non alpha numeric characthers python" og får opp flere forslag.  
+Ender opp med et forslag herifra: https://stackoverflow.com/questions/1276764/stripping-everything-but-alphanumeric-chars-from-a-string-in-python
+
+Dermed blir koden slik:
+```
+import re
+
+f = open("2.txt", "r")
+
+txt = f.read()
+
+new_txt = re.sub(r"\W+", "", txt) # sub for substitute, "\W+" tilsvarer "[^0-9a-zA-Z]+"
+
+new_txt = new_txt.replace("_", "") # fjerner understreker _ (regnes som alfanumerisk)
+
+print(new_txt)
+```
+
+Dette gir oss løsningsordet:  
+`equality`
+
+

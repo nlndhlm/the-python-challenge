@@ -1,4 +1,4 @@
-[0]
+#[0]
 
 Her ser vi et bilde hvor det står 2^38, altså 2 opphøyd i 38.
 

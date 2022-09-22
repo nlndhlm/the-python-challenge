@@ -190,4 +190,10 @@ print(word)
 
 Kodetordet for neste oppgave ble dermed `linkedlist`.
 
+Neste level:  
 http://www.pythonchallenge.com/pc/def/linkedlist.html
+
+# [4]
+
+Vi blir møtt av en enkel `<p>` hvor det står `linkedlist.php`.  
+

@@ -142,7 +142,7 @@ www.pythonchallenge.com/pc/def/equality.html
 
 # [3]
 
-Hint: One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.  
+Hint: "One small letter, surrounded by EXACTLY three big bodyguards on each of its sides."  
 
 Nok en gang kikker vi i kildekoden og finner en stor vegg med tekst.  
 
@@ -155,3 +155,39 @@ BEBaxeaPgQPttvqRvxHPEOUtIsttPDeeuGFgmDkKQcEYjuSuiGROGfYpzkQgvcCDBKrcYwHFlvPzDMEk
 MyuPxvGtgSvWgrybKOnbEGhqHUXHhnyjFwSfTfaiWtAOMBZEScsOSumwPssjCPlLbLsPIGffDLpZzMKz
 ```
 
+Det ser ut til å være bare bokstaver denne gangen.  
+Vi tolker derfor hintet til å være at vi skal finne en liten bokstav, omgitt av nøyaktig tre bokstaver på hver side.  
+Altså et slikt mønster: aBBBaBBBa  
+
+Etter å ha googlet regex for n'te gang, endte jeg opp med et mønster som så slik ut:  
+
+`pattern = "[a-z][A-Z]{3}[a-z][A-Z]{3}[a-z]"`
+
+Hele koden endte opp slik:  
+
+```
+import re
+
+f = open("3.txt", "r")
+
+txt = f.read()
+
+
+pattern = "[a-z][A-Z]{3}[a-z][A-Z]{3}[a-z]"
+
+matches = re.findall(pattern, txt)
+
+print(matches)
+
+word = ""
+
+for match in matches:
+    #print(match[4])
+    word = word + match[4]
+
+print(word)
+```
+
+Kodetordet for neste oppgave ble dermed `linkedlist`.
+
+http://www.pythonchallenge.com/pc/def/linkedlist.html

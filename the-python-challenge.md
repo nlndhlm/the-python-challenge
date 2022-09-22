@@ -205,11 +205,48 @@ I kildekoden står det:
 `urllib may help. DON'T TRY ALL NOTHINGS, since it will never 
 end. 400 times is more than enough.`
 
-I tillegg finner vi `<a href="linkedlist.php?nothing=12345"></a>`.
-Når vi trykker på den får vi opp teksten: `and the next nothing is 44827`.
-Vi endrer `nothing` til `44827` og får:  
+I tillegg finner vi `<a href="linkedlist.php?nothing=12345"></a>`.  
+Når vi trykker på den får vi opp teksten: `and the next nothing is 44827`.  
+Vi endrer til `nothing=44827` og får:  
 `and the next nothing is 45439`
 
 Vi antar at dette kommer til å holde på en stund.  
 Derfor får vi heller lage et skript som gjør jobben for oss.  
+
+I denne koden brukes `requests` for å laste ned siden, og `re` for å finne neste kode:  
+```
+import requests
+import re
+
+url = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
+
+next_step = "12345"
+
+while True:
+
+    p = requests.get(url + next_step)
+
+    print(p.text)
+
+    txt = p.text
+
+    pattern = "[0-9]+"
+
+    new_code = re.findall(pattern, txt)
+
+    print(new_code)
+
+    next_step = new_code[0]
+```
+Underveis som skriptet kjører stopper det opp, og gir oss nye retninger.  
+Dette medfører at vi må endre `next_step` i koden vår manuelt.  
+
+Til slutt ender vi opp med koden:
+`peak.html`
+
+Neste level(5):
+http://www.pythonchallenge.com/pc/def/peak.html
+
+# [5]
+
 

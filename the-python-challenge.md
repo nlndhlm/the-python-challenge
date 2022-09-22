@@ -197,3 +197,19 @@ http://www.pythonchallenge.com/pc/def/linkedlist.html
 
 Vi blir møtt av en enkel `<p>` hvor det står `linkedlist.php`.  
 
+Vi endrer derfor adressen til:  
+
+http://www.pythonchallenge.com/pc/def/linkedlist.php
+
+I kildekoden står det:  
+`urllib may help. DON'T TRY ALL NOTHINGS, since it will never 
+end. 400 times is more than enough.`
+
+I tillegg finner vi `<a href="linkedlist.php?nothing=12345"></a>`.
+Når vi trykker på den får vi opp teksten: `and the next nothing is 44827`.
+Vi endrer `nothing` til `44827` og får:  
+`and the next nothing is 45439`
+
+Vi antar at dette kommer til å holde på en stund.  
+Derfor får vi heller lage et skript som gjør jobben for oss.  
+

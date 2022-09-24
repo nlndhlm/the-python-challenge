@@ -249,4 +249,67 @@ http://www.pythonchallenge.com/pc/def/peak.html
 
 # [5]
 
+Her kommer det frem et bilde av en bakketopp.  
+Under bildet står bildeteksten "pronounce it" og i kildekoden står det "peak hell sounds familiar?".  
+Etter å ha prøvd å uttale "peak hell" på forskjellige måter, måtte jeg til slutt gi opp.  
+Da googlet jeg "peak hell" og fikk dermed nyss om et python library som heter _pickle_.
+Etter hvert skjønner jeg at _pickle_ konverterer filer til og fra såkalte _byte streams_, altså rett og slett lav-nivå data.  
+
+I kildekoden ligger det en fil av filtypen `.p`, under `<peakhell src="banner.p"></peakhell>`.
+Denne filtypen stemmer overens med den som brukes i dokumentasjonen til _pickle_:  
+https://wiki.python.org/moin/UsingPickle  
+Vi laster derfor ned fila fra adressen http://www.pythonchallenge.com/pc/def/banner.p, før vi begynner på et nytt skript.  
+
+Denne oppgaven viste seg å være vrien.  
+Jeg hadde ikke hørst om hverken _pickle_ eller _byte streams_ før, så jeg måtte famle i blinde.  
+Fikk etterhvert dekodet fila, og fikk frem en liste bestående av flere lister.  
+Hver disse listene inneholdt én eller flere _tuples_, med to verdier.  
+
+Utdrag:  
+``
+[(' ', 95)], [(' ', 14), ('#', 5), (' ', 70), ('#', 5), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+``
+Vi ser at hver _tuple_ inneholder to verdier: enten et _mellomrom_ eller en _hash_, i tillegg til et tall.  
+Etter å ha tenkt og prøvd, hardt og lenge, kom jeg frem til at hver av de indre listene er én linje.  
+Legg merke til at tallene i hver liste summerer til 95:  
+``
+[(' ', 95)]
+[(' ', 14), ('#', 5), (' ', 70), ('#', 5), (' ', 1)]
+[(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+``
+Altså:  
+Den første verdien angir symbolet: enten _mellomrom_ eller _hash_.
+Den andre verdien angir hvor mange ganger den skal gjentas, på rad.  
+
+I eksempelet over:
+Første linje er bare 95 _mellomrom_.
+Andre linje er 14 _mellomrom_ etterfulgt av 5 _hash_, etterfulgt av 70 _mellomrom_, 5 _hash_, 1 _mellomrom_.
+Og så videre..
+
+Jeg automatiserte prosessen med følgende skript:
+
+``
+import pickle
+
+f = open('banner.p','rb')
+
+data = pickle.load(f)
+
+txt = []
+
+for line in data:
+    line_string = ""
+    for item in line:
+        # print(item[0]*item[1])
+        line_string = line_string + item[0]*item[1]
+
+    txt.append(line_string)
+
+for l in txt:
+    print(l)
+``
+
+Hvilket gir oss ASCII-art-teksten: Channel
+
+Neste level: http://www.pythonchallenge.com/pc/def/channel.html
 

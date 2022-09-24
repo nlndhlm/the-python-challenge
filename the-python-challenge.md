@@ -268,7 +268,7 @@ Hver disse listene inneholdt én eller flere _tuples_, med to verdier.
 Utdrag:  
 ``
 [(' ', 95)], [(' ', 14), ('#', 5), (' ', 70), ('#', 5), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)], [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
-``
+``  
 Vi ser at hver _tuple_ inneholder to verdier: enten et _mellomrom_ eller en _hash_, i tillegg til et tall.  
 Etter å ha tenkt og prøvd, hardt og lenge, kom jeg frem til at hver av de indre listene er én linje.  
 Legg merke til at tallene i hver liste summerer til 95:  
@@ -288,7 +288,7 @@ Og så videre..
 
 Jeg automatiserte prosessen med følgende skript:
 
-``
+```
 import pickle
 
 f = open('banner.p','rb')
@@ -307,7 +307,7 @@ for line in data:
 
 for l in txt:
     print(l)
-``
+```
 
 Hvilket gir oss ASCII-art-teksten: Channel
 

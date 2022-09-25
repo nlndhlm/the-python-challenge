@@ -249,21 +249,22 @@ http://www.pythonchallenge.com/pc/def/peak.html
 
 # [5]
 
-Her kommer det frem et bilde av en bakketopp.  
+Det første vi ser er et bilde av en høyde/bakketopp.  
 Under bildet står bildeteksten "pronounce it" og i kildekoden står det "peak hell sounds familiar?".  
 Etter å ha prøvd å uttale "peak hell" på forskjellige måter, måtte jeg til slutt gi opp.  
-Da googlet jeg "peak hell" og fikk dermed nyss om et python library som heter _pickle_.
-Etter hvert skjønner jeg at _pickle_ konverterer filer til og fra såkalte _byte streams_, altså rett og slett lav-nivå data.  
+Om vi googler "peak hell" får vi nyss om et python library som heter _pickle_.  
+Utifra dokumentasjonen kommer det frem at _pickle_ konverterer filer til og fra såkalte _byte streams_, altså rett og slett lav-nivå data.  
 
-I kildekoden ligger det en fil av filtypen `.p`, under `<peakhell src="banner.p"></peakhell>`.
+I kildekoden ligger det en fil av filtypen `.p`, under `<peakhell src="banner.p"></peakhell>`.  
 Denne filtypen stemmer overens med den som brukes i dokumentasjonen til _pickle_:  
 https://wiki.python.org/moin/UsingPickle  
 Vi laster derfor ned fila fra adressen http://www.pythonchallenge.com/pc/def/banner.p, før vi begynner på et nytt skript.  
 
-Denne oppgaven viste seg å være vrien.  
-Jeg hadde ikke hørst om hverken _pickle_ eller _byte streams_ før, så jeg måtte famle i blinde.  
-Fikk etterhvert dekodet fila, og fikk frem en liste bestående av flere lister.  
-Hver disse listene inneholdt én eller flere _tuples_, med to verdier.  
+Denne oppgaven viste seg å være ganske vrien.  
+Selv hadde jeg ikke hørst om hverken _pickle_ eller _byte streams_ før, så jeg måtte famle en stund i blinde.  
+Om man følger dokumentasjonen er det ganske enkelt å dekode fila.
+Man vil da få frem en liste bestående av flere lister.  
+Hver av disse listene inneholdt én eller flere _tuples_, med to verdier.  
 
 Utdrag:  
 ``
@@ -286,12 +287,12 @@ Første linje er bare 95 _mellomrom_.
 Andre linje er 14 _mellomrom_ etterfulgt av 5 _hash_, etterfulgt av 70 _mellomrom_, 5 _hash_, 1 _mellomrom_.
 Og så videre..
 
-Jeg automatiserte prosessen med følgende skript:
+Vi automatiserer prosessen med følgende skript:
 
 ```
 import pickle
 
-f = open('banner.p','rb')
+f = open("banner.p","rb")
 
 data = pickle.load(f)
 

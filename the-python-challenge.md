@@ -256,15 +256,15 @@ Om vi googler "peak hell" får vi nyss om et python library som heter _pickle_.
 Utifra dokumentasjonen kommer det frem at _pickle_ konverterer filer til og fra såkalte _byte streams_, altså rett og slett lav-nivå data.  
 
 I kildekoden ligger det en fil av filtypen `.p`, under `<peakhell src="banner.p"></peakhell>`.  
-Denne filtypen stemmer overens med den som brukes i dokumentasjonen til _pickle_:  
-https://wiki.python.org/moin/UsingPickle  
+Denne filtypen stemmer overens med den som brukes i dokumentasjonen til _pickle_: https://wiki.python.org/moin/UsingPickle.
 Vi laster derfor ned fila fra adressen http://www.pythonchallenge.com/pc/def/banner.p, før vi begynner på et nytt skript.  
 
 Denne oppgaven viste seg å være ganske vrien.  
 Selv hadde jeg ikke hørst om hverken _pickle_ eller _byte streams_ før, så jeg måtte famle en stund i blinde.  
-Om man følger dokumentasjonen er det ganske enkelt å dekode fila.
+
+Om man følger dokumentasjonen er det ganske rett frem å dekode fila.
 Man vil da få frem en liste bestående av flere lister.  
-Hver av disse listene inneholdt én eller flere _tuples_, med to verdier.  
+Hver av disse listene inneholder én eller flere _tuples_, med to verdier.  
 
 Utdrag:  
 ``
